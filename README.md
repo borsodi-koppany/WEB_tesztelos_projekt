@@ -1,6 +1,7 @@
 # Idle game és tesztelése
 
 ## Tesztesetek:
+- Oldal betöltése
 - currency növekedése
 - upgrade 1 működése
 - upgrade 2 működése
