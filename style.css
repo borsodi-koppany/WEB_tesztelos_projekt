@@ -28,20 +28,19 @@
     margin: auto;
 }
 .kolto{
-    position: absolute;
+    position: relative;
     width: 400px;
-    bottom: 200px;
-    left: 500px;
+    top: 200px;
     margin: auto;
 }
 
 .upgrades{
     width: 30%;
     height: 750px;
-    
     float: right;
-    background-color: darkgoldenrod;
+    background-color: rgb(166, 122, 10);
     text-indent: 20px;
+    overflow-y: scroll;
     
 
 }
@@ -54,6 +53,34 @@
     margin-bottom: 20px;
     width: 275px;
     height: 65px;
+    border-radius: 10px;
 
-    background-color: wheat;
+
+    background-color: rgb(220, 181, 109);
+}
+
+.upgrade h4{
+    color:darkgoldenrod ;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.upgrade span{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    position: relative;
+}
+
+.upgrade button{
+    background-color: rgb(181, 169, 30);
+    color: white;
+    float: left;
+    position: relative;
+ top: 35px;
+ left: 80px;
+ font-size: 18px;
+ border: none;
 }
