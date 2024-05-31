@@ -52,7 +52,7 @@
     margin: auto;
     margin-bottom: 20px;
     width: 275px;
-    height: 65px;
+    height: 75px;
     border-radius: 10px;
 
 
@@ -64,6 +64,8 @@
     font-size: 20px;
     display: inline-block;
     margin-top: 10px;
+    margin-bottom: 0;
+    position: relative;
 }
 
 .upgrade span{
@@ -83,4 +85,5 @@
  left: 80px;
  font-size: 18px;
  border: none;
+ margin: 0;
 }
