@@ -568,10 +568,10 @@
           }
         }
       },
-      "Selenium.Support/4.20.0": {
+      "Selenium.Support/4.21.0": {
         "type": "package",
         "dependencies": {
-          "Selenium.WebDriver": "4.20.0"
+          "Selenium.WebDriver": "4.21.0"
         },
         "compile": {
           "lib/netstandard2.0/WebDriver.Support.dll": {
@@ -2418,17 +2418,17 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-    "Selenium.Support/4.20.0": {
-      "sha512": "ANrmrsgGUIP53wHxBcAEAsAMpcGr1D7Dtb8wjftuqyxBl/GmX9tU9uN5WDmEVo4WQI32OWgc/KG1ugsOmlr96w==",
+    "Selenium.Support/4.21.0": {
+      "sha512": "MiDIsB/5Ki1AWua/b9v/eGARtI6bxseAt4EOl2fgl7WsoXlV7Zzq5/gGJ7Zs9PLvJUQMbS6WSNWuMdeSr1SXdA==",
       "type": "package",
-      "path": "selenium.support/4.20.0",
+      "path": "selenium.support/4.21.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "icon.png",
         "lib/netstandard2.0/WebDriver.Support.dll",
         "lib/netstandard2.0/WebDriver.Support.xml",
-        "selenium.support.4.20.0.nupkg.sha512",
+        "selenium.support.4.21.0.nupkg.sha512",
         "selenium.support.nuspec"
       ]
     },
@@ -5610,7 +5610,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.NET.Test.Sdk >= 17.5.0",
-      "Selenium.Support >= 4.20.0",
+      "Selenium.Support >= 4.21.0",
       "Selenium.WebDriver >= 4.21.0",
       "Selenium.WebDriver.ChromeDriver >= 125.0.6422.7800",
       "coverlet.collector >= 3.2.0",
@@ -5619,23 +5619,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Koppany\\.nuget\\packages\\": {},
+    "C:\\Users\\borsodi.koppany\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Koppany\\Desktop\\suli\\WEB_tesztelos_projekt\\ikt_projekt_teszt\\ikt_projekt_teszt\\ikt_projekt_teszt.csproj",
+      "projectUniqueName": "Z:\\11\\web\\WEB_tesztelos_projekt\\ikt_projekt_teszt\\ikt_projekt_teszt\\ikt_projekt_teszt.csproj",
       "projectName": "ikt_projekt_teszt",
-      "projectPath": "C:\\Users\\Koppany\\Desktop\\suli\\WEB_tesztelos_projekt\\ikt_projekt_teszt\\ikt_projekt_teszt\\ikt_projekt_teszt.csproj",
-      "packagesPath": "C:\\Users\\Koppany\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Koppany\\Desktop\\suli\\WEB_tesztelos_projekt\\ikt_projekt_teszt\\ikt_projekt_teszt\\obj\\",
+      "projectPath": "Z:\\11\\web\\WEB_tesztelos_projekt\\ikt_projekt_teszt\\ikt_projekt_teszt\\ikt_projekt_teszt.csproj",
+      "packagesPath": "C:\\Users\\borsodi.koppany\\.nuget\\packages\\",
+      "outputPath": "Z:\\11\\web\\WEB_tesztelos_projekt\\ikt_projekt_teszt\\ikt_projekt_teszt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Koppany\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\borsodi.koppany\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5644,6 +5644,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5668,7 +5669,7 @@
           },
           "Selenium.Support": {
             "target": "Package",
-            "version": "[4.20.0, )"
+            "version": "[4.21.0, )"
           },
           "Selenium.WebDriver": {
             "target": "Package",
@@ -5711,7 +5712,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
