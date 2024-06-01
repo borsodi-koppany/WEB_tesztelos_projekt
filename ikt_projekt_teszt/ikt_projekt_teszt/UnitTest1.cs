@@ -56,13 +56,29 @@ namespace ikt_projekt_teszt
             Assert.Equal("0", driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text);
             Assert.Equal("4", driver.FindElement(By.XPath("/html/body/div/div[3]/div[1]/button")).GetDomAttribute(attributeName: "value"));
         }
+        [Fact]
+        public void MasodikgombTesztelese()
+        {
+            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[2]/button"));
+            while(int.Parse(driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text) <= int.Parse(upgradeBtn.GetDomAttribute(attributeName: "value")))
+            {
+                driver.FindElement(By.XPath("/html/body/div/div[3]/div[1]/button")).Click();
+            }
+            var currency = int.Parse(driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text);
+            upgradeBtn.Click();
+            Assert.Equal("80", upgradeBtn.GetDomAttribute(attributeName: "value"));
+            Assert.Equal("lvl 1", driver.FindElement(By.XPath("/html/body/div/div[3]/div[2]/span")).Text);
+
+            Assert.Equal("4", driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text);
+
+        }
 
         [Theory]
-        [InlineData("2", "20")]
-        [InlineData("3", "500")]
-        [InlineData("4", "5000")]
-        [InlineData("5", "50000")]
-        public void TobbiGombTesztelese(string id, string cost)
+        //[InlineData("2", "20")]
+        [InlineData("3", "500", "2000")]
+        [InlineData("4", "5000", "20000")]
+        [InlineData("5", "50000", "200000")]
+        public void TobbiGombTesztelese(string id, string cost, string upgradeMennyi)
         {
             var upgradeBtn = driver.FindElement(By.XPath($"/html/body/div/div[3]/div[{id}]/button"));
             var elozoGomb = driver.FindElement(By.XPath($"/html/body/div/div[3]/div[{int.Parse(id) - 1}]/button"));
@@ -74,7 +90,7 @@ namespace ikt_projekt_teszt
             //        elozoGomb.Click();
             //    }
             //} while (int.Parse(driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text) <= int.Parse(cost));
-            while (int.Parse(driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text) <= int.Parse(cost))
+            while (int.Parse(driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text) <= int.Parse(elozoGomb.GetDomAttribute(attributeName: "value")))
             {
                 driver.FindElement(By.XPath("/html/body/div/div[3]/div[1]/button")).Click();
                 //if (int.Parse(elozoGomb.GetDomAttribute(attributeName: "value")) > int.Parse(driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text))
@@ -82,10 +98,15 @@ namespace ikt_projekt_teszt
                 //    elozoGomb.Click();
                 //}
             }
+            while(int.Parse(driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text) <= int.Parse(cost))
+            {
+                elozoGomb.Click();
+            }
             var currency = int.Parse(driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text);
             upgradeBtn.Click();
             Assert.Equal("lvl 1", driver.FindElement(By.XPath($"/html/body/div/div[3]/div[{id}]/span")).Text);
             Assert.Equal((currency - int.Parse(cost)).ToString(), driver.FindElement(By.XPath("/html/body/div/div[1]/h1[1]/span")).Text);
+            Assert.Equal(upgradeMennyi, upgradeBtn.GetDomAttribute(attributeName: "value"));
         }
     }
 }
