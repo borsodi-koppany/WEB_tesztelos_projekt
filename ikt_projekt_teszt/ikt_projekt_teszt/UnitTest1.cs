@@ -27,144 +27,23 @@ namespace ikt_projekt_teszt
         }
 
         [Theory]
-        [InlineData("lvl 1", "4")]
-        public void SzokincsGombMukodese(string ujSzint, string upgrademennyi)
+        [InlineData("1", "lvl 1", "4")]
+        [InlineData("2", "lvl 1", "80")]
+        [InlineData("3", "lvl 1", "2000")]
+        [InlineData("4", "lvl 1", "20000")]
+        [InlineData("5", "lvl 1", "200000")]
+        [InlineData("6", "lvl 1", "4")]
+        [InlineData("7", "lvl 1", "4000")]
+        [InlineData("8", "lvl 1", "400000")]
+        [InlineData("9", "lvl 1", "4")]
+        [InlineData("10", "lvl 1", "4000000")]
+        public void GombokTesztelése(string divId, string ujszint, string upgradeMennyi)
         {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[1]/button"));
-            
-
+            var upgradeBtn = driver.FindElement(By.XPath($"/html/body/div/div[3]/div[{divId}]/button"));
             upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[1]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[1]/button")).Text);
-
-        }
-
-        [Theory]
-        [InlineData("lvl 1", "80")]
-        public void IroeszkozGombMukodese(string ujSzint, string upgrademennyi)
-        {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[2]/button"));
-
-
-            upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[2]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[2]/button")).Text);
-
-        }
-
-        [Theory]
-        [InlineData("lvl 1", "2000")]
-        public void RimelesGombMukodese(string ujSzint, string upgrademennyi)
-        {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[3]/button"));
-
-
-            upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[3]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[3]/button")).Text);
-
-        }
-
-        [Theory]
-        [InlineData("lvl 1", "20000")]
-        public void MondatSzerkezetGombMukodese(string ujSzint, string upgrademennyi)
-        {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[4]/button"));
-
-
-            upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[4]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[4]/button")).Text);
-
-        }
-
-        [Theory]
-        [InlineData("lvl 1", "200000")]
-        public void PetofiGombMukodese(string ujSzint, string upgrademennyi)
-        {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[5]/button"));
-
-
-            upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[5]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[5]/button")).Text);
-
-        }
-
-        [Theory]
-        [InlineData("lvl 1", "4")]
-        public void BolcseszGombMukodese(string ujSzint, string upgrademennyi)
-        {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[6]/button"));
-
-
-            upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[6]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[6]/button")).Text);
-
-        }
-
-
-        [Theory]
-        [InlineData("lvl 1", "4000")]
-        public void AlkoholGombMukodese(string ujSzint, string upgrademennyi)
-        {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[7]/button"));
-
-
-            upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[7]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[7]/button")).Text);
-
-        }
-
-        [Theory]
-        [InlineData("lvl 1", "400000")]
-        public void DrogGombMukodese(string ujSzint, string upgrademennyi)
-        {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[8]/button"));
-
-
-            upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[8]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[8]/button")).Text);
-
-        }
-
-        [Theory]
-        [InlineData("lvl 1", "4")]
-        public void KisfaludyGombMukodese(string ujSzint, string upgrademennyi)
-        {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[9]/button"));
-
-
-            upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[9]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[9]/button")).Text);
-
-        }
-
-        [Theory]
-        [InlineData("lvl 1", "4000000")]
-        public void NTFGombMukodese(string ujSzint, string upgrademennyi)
-        {
-            var upgradeBtn = driver.FindElement(By.XPath("/html/body/div/div[3]/div[10]/button"));
-
-
-            upgradeBtn.Click();
-            var szint = driver.FindElement(By.XPath("/html/body/div/div[3]/div[10]/span")).Text;
-            Assert.Equal(ujSzint, szint);
-            Assert.Equal(upgrademennyi, driver.FindElement(By.XPath("/html/body/div/div[3]/div[10]/button")).Text);
-
+            var szint = driver.FindElement(By.XPath($"/html/body/div/div[3]/div[{divId}]/span")).Text;
+            Assert.Equal(ujszint, szint);
+            Assert.Equal(upgradeMennyi, driver.FindElement(By.XPath($"/html/body/div/div[3]/div[{divId}]/button")).Text);
         }
     }
 }
