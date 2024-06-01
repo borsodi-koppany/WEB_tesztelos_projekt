@@ -5,11 +5,13 @@ class Upgrade {
         this.cost = cost;
         this.generate = generate;
         this.type = type;
+        
     }
 
     Buy() {
         this.cost *= 4;
         this.quantity += 1;
+        this.generate *= 2;
     }
 }
 
@@ -24,7 +26,31 @@ class UpgradeDiv {
         this.div.appendChild(this.h);
 
         this.costButton = document.createElement("button");
-        this.costButton.textContent = upgrade.cost;
+        this.costButton.textContent = upgrade.cost + "";
+
+         if(this.u.type == "v"){
+            let i = document.createElement("i");
+            i.classList.add("fa-solid")
+            i.classList.add("fa-music")
+            this.icon = i;
+            this.costButton.append(this.icon)
+
+        }
+        else if(this.u.type == "w"){
+            let i = document.createElement("i");
+            i.classList.add("fa-solid")
+            i.classList.add("fa-w")
+            this.icon = i;
+            this.costButton.append(this.icon)
+
+        }
+        else{
+            let i = document.createElement("i");
+            i.classList.add("fa-solid")
+            i.classList.add("fa-book")
+            this.icon = i;
+            this.costButton.append(this.icon)
+        }
         this.costButton.value = upgrade.cost;
         this.div.appendChild(this.costButton);
 
@@ -39,12 +65,116 @@ class UpgradeDiv {
 
     Update() {
         this.costButton.textContent = this.u.cost;
+        this.costButton.append(this.icon)
         this.costButton.value = this.u.cost;
         this.span.textContent = `lvl ${this.u.quantity}`;
     }
 
     BuyD() {
-        this.u.Buy();
+        if(this.u.type == "v"){
+            if(versek >= this.u.cost){
+                if(this.u.quantity == 0){
+                    if(this.u.name == "Bölcsész diploma"){
+                        
+                        
+                    
+                        let d = document.createElement("div")
+                        d.classList.add("diploma")
+                        document.querySelector(".display").append(d);
+                       
+                    }
+                   else if(this.u.name == "Alkohol"){
+                        let d = document.createElement("div")
+                        d.classList.add("alkohol")
+                        document.querySelector(".display").append(d);
+                       
+                    }
+                   else if(this.u.name == "Drog"){
+                        let d = document.createElement("div")
+                        d.classList.add("drog")
+                        document.querySelector(".display").append(d);
+                       
+                    }
+                  
+                }
+                if(this.u.quantity == 0){
+                    if(this.u.name == "Íróeszköz"){
+                        document.querySelector(".kolto").classList.add("koltofejlesztve");
+                        console.log("jo")
+                    }
+                }
+                versek -= this.u.cost;
+                this.u.Buy();
+                SzamFrissit(words, versek, verseskotetek)
+                
+            }
+        }
+        else if(this.u.type == "w"){
+            if(words >= this.u.cost){
+                if(this.u.quantity == 0){
+                    if(this.u.name == "Íróeszköz"){
+                        document.querySelector(".kolto").classList.add("koltofejlesztve");
+                        
+                    }
+                   else if(this.u.name == "Szókincs"){
+                        let d = document.createElement("div")
+                        d.classList.add("szokincs")
+                        document.querySelector(".display").append(d);
+                       
+                    }
+                   else if(this.u.name == "Rímelés"){
+                        let d = document.createElement("div")
+                        d.classList.add("rimeles")
+                        document.querySelector(".display").append(d);
+                       
+                    }
+                   else if(this.u.name == "Mondatszerkezet"){
+                        let d = document.createElement("div")
+                        d.classList.add("mondatszerk")
+                        document.querySelector(".display").append(d);
+                       
+                    }
+                   else if(this.u.name == "Petőfi verseskötet"){
+                        let d = document.createElement("div")
+                        d.classList.add("petofi")
+                        document.querySelector(".display").append(d);
+                       
+                    }
+                }
+                
+                words -= this.u.cost;
+                this.u.Buy();
+                SzamFrissit(words, versek, verseskotetek)
+
+            }
+        }
+        else{
+            if(verseskotetek >= this.u.cost){
+                if(this.u.quantity == 0){
+                    if(this.u.name == "Kis-Faludy díj"){
+                        
+                        
+                    
+                        let d = document.createElement("div")
+                        d.classList.add("kisfaludy")
+                        document.querySelector(".display").append(d);
+                       
+                    }
+                   else if(this.u.name == "SzoÓ Virág"){
+                        let d = document.createElement("div")
+                        d.classList.add("szoovirag")
+                        document.querySelector(".display").append(d);
+                       
+                    }
+                   
+                  
+                }
+                verseskotetek -= this.u.cost;
+                this.u.Buy();
+                SzamFrissit(words, versek, verseskotetek)
+
+            }
+        }
         this.Update();
         console.log(this.u.cost);
     }
@@ -66,22 +196,24 @@ function SzamFrissit(w, v, vk){
     wspan.textContent = w;
     vspan.textContent = v;
     vkspan.textContent = vk;
+    
 }
 let fejlesztesek = [
-    new Upgrade("szókincs", 0, 1, 1, "w"),
-    new Upgrade("Íróeszköz", 0, 20, 10, "w"),
-    new Upgrade("rímelés", 0, 500, 100, "w"),
-    new Upgrade("modatszerkezet", 0, 5000, 1000, "w"),
+    new Upgrade("Íróeszköz", 0, 1, 1, "w"),
+    new Upgrade("Szókincs", 0, 20, 10, "w"),
+    new Upgrade("Rímelés", 0, 500, 100, "w"),
+    new Upgrade("Mondatszerkezet", 0, 5000, 1000, "w"),
     new Upgrade("Petőfi verseskötet", 0, 50000, 10000, "w"),
-    new Upgrade("Bölcsész diploma", 0, 1, 1, "v"),
+    new Upgrade("Bölcsész diploma", 0, 5, 1, "v"),
     new Upgrade("Alkohol", 0, 1000, 100, "v"),
     new Upgrade("Drog", 0, 100000, 10000, "v"),
-    new Upgrade("Kis-Faludy díj", 0, 1, 1, "vk"),
+    new Upgrade("Kis-Faludy díj", 0, 10, 1, "vk"),
     new Upgrade("SzoÓ Virág", 0, 1000000, 0, "vk")
 ];
-let words = 0;
-let versek = 0;
-let verseskotetek = 0;
+
+var words = 1;
+var versek = 0;
+var verseskotetek = 0;
 let fejlesztesekdiv = fejlesztesek.map(fejlesztes => new UpgradeDiv(fejlesztes));
 
 let Income = setInterval(() => {
@@ -96,7 +228,29 @@ let Income = setInterval(() => {
             verseskotetek += fdiv.u.quantity * fdiv.u.generate
         }
     })
+    if(words > 1000000){
+        versek++;
+        words -= 1000000;
+    }
+    if(versek > 1000000){
+        verseskotetek++;
+        versek -= 1000000;
+    }
     SzamFrissit(words, versek, verseskotetek);
+    
 }, 1000)
 
 KiirasFrissit(fejlesztesekdiv);
+function music(){
+
+    let mySound = new Audio("Szoó Virág_ A lázadó imája.mp3")
+    mySound.play()
+}
+// window.addEventListener("click", music)
+var budosszar = 0
+window.addEventListener("click", () => {
+    budosszar += 1;
+    if(budosszar == 1){
+        music()
+    }
+})

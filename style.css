@@ -7,6 +7,7 @@
 }
 .awards{
     width: 100%;
+    max-width: 1000px;
     height: 80px;
     background-color: darkred;
     text-indent: 20px;
@@ -27,13 +28,155 @@
     background-color: white;
     margin: auto;
 }
+@keyframes Ir {
+    0% {background-image: url("/kepek/ir1.png");}
+    50% {background-image: url("/kepek/ir2.png");}
+    100% {background-image: url("/kepek/ir3.png");}
+  }
+
 .kolto{
     position: relative;
-    width: 400px;
-    top: 200px;
+    background-image: url("/kepek/ir0.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 300px;
+    top: 330px;
+    left: 0px;
     margin: auto;
 }
-
+.koltofejlesztve{
+    animation-name: Ir;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+.szokincs{
+    width: 50px;
+    height: 100px;
+    position: relative;
+    background-image: url("/kepek/szokincs.jpg");
+    /* background-color: red; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 85px;
+    left: 130px;
+    
+    
+}
+.rimeles{
+    width: 800px;
+    height: 400px;
+    position: relative;
+    background-image: url("/kepek/rimeles.png");
+    /* background-color: red; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -450px;
+    right:80px;
+    
+    
+}
+.mondatszerk{
+    width: 250px;
+    height: 300px;
+    position: relative;
+    background-image: url("/kepek/mondatszerk.png");
+    /* background-color: red; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -600px;
+    right:-390px;
+    
+    
+}
+.petofi{
+    width: 250px;
+    height: 300px;
+    position: relative;
+    background-image: url("/kepek/petofi.png");
+    /* background-color: red; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -830px;
+    right:60px;
+    
+    
+}
+.diploma{
+    width: 150px;
+    height: 300px;
+    position: relative;
+    background-image: url("/kepek/cap-306015_1280.png");
+    /* background-color: red; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -1190px;
+    right:-245px;
+    
+    
+}
+.alkohol{
+    width: 120px;
+    height: 150px;
+    position: relative;
+    background-image: url("/kepek/alkohol.png");
+    /* background-color: red; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -1380px;
+    right:-335px;
+    
+    
+}
+.drog{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    background-image: url("/kepek/drog.png");
+    /* background-color: red; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -1420px;
+    right:-235px;
+    
+    
+}
+.kisfaludy{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-image: url("/kepek/kisfaludy.jpg");
+    /* background-color: red; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -1780px;
+    right:-220px;
+    
+    
+}
+.szoovirag{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-image: url("/kepek/szoovirag.png");
+    /* background-color: red; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -1830px;
+    right:-220px;
+    
+    
+}
 .upgrades{
     width: 30%;
     height: 750px;
@@ -46,7 +189,9 @@
 }
 .awards h1{
     display: inline-block;
-    margin-right: 30px;
+    margin-right:0;
+    font-size: 28px;
+    
 }
 .upgrade{
     margin: auto;
