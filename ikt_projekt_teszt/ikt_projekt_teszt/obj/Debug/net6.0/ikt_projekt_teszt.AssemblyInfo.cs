@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ikt_projekt_teszt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0249270f8f43c61ebfd062fa26f9800414cc86f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fefaf6e50ae18c0b184896fd10bcf9e2ca2a2d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ikt_projekt_teszt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ikt_projekt_teszt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
