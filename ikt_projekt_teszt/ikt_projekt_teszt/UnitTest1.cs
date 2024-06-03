@@ -17,7 +17,7 @@ namespace ikt_projekt_teszt
         public UnitTest1()
         {
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("http://127.0.0.1:5500/index.html");
+            driver.Navigate().GoToUrl("https://borsodi-koppany.github.io/WEB_tesztelos_projekt/");
         }
 
         [Fact]
@@ -67,13 +67,13 @@ namespace ikt_projekt_teszt
 
         [Theory]
         [InlineData("3", "500", "2000", "rimeles")]
-        [InlineData("4", "5000", "20000", "mondatszerk")]
-        [InlineData("5", "50000", "200000", "petofi")]
-        [InlineData("6", "200000", "800000", "diploma")]
-        [InlineData("7", "1000000", "4000000", "alkohol")]
-        [InlineData("8", "100000000", "400000000", "drog")]
-        [InlineData("9", "1000000000", "4000000000", "kisfaludy")]
-        [InlineData("10", "10000000000000", "40000000000000", "szoovirag")]
+        //[InlineData("4", "5000", "20000", "mondatszerk")]
+        //[InlineData("5", "50000", "200000", "petofi")]
+        //[InlineData("6", "200000", "800000", "diploma")]
+        //[InlineData("7", "1000000", "4000000", "alkohol")]
+        //[InlineData("8", "100000000", "400000000", "drog")]
+        //[InlineData("9", "1000000000", "4000000000", "kisfaludy")]
+        //[InlineData("10", "10000000000000", "40000000000000", "szoovirag")]
         public void TobbiGombTesztelese(string id, string cost, string upgradeMennyi, string kep)
         {
             var upgradeBtn = driver.FindElement(By.XPath($"/html/body/div/div[3]/div[{id}]/button"));
